@@ -1,17 +1,14 @@
 import React, { useEffect, useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DispatchContext from "../DispatchContext";
 import StateContext from "../StateContext";
 
 function HeaderLoggedIn() {
-  const history = useHistory();
   const appDispatch = useContext(DispatchContext);
   const appState = useContext(StateContext);
 
   function handleLogout() {
-    console.log("logout, props history", history);
     appDispatch({ type: "logout" });
-    if (history.location.pathname === "/create-post") history.push("/");
   }
   function handleSearch(e) {
     e.preventDefault();

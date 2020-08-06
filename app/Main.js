@@ -86,7 +86,9 @@ function Main() {
               <EditPost />
             </Route>
             <Route path="/create-post">
-              <CreatePost />
+              {/* <CreatePost />
+               */}
+              {state.loggedIn ? <CreatePost /> : <HomeGuest />}
             </Route>
             <Route path="/about">
               <About />
